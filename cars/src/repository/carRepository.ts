@@ -13,7 +13,7 @@ async function getCar(id: number) {
   // return data.rows[0];
 
   return prisma.cars.findFirst({
-    where: { id: id }
+    where: { id }
   })
 }
 
@@ -22,7 +22,7 @@ async function getCarWithLicensePlate(licensePlate: string) {
   // return data.rows[0];
 
   return prisma.cars.findFirst({
-    where: { licensePlate: licensePlate }
+    where: { licensePlate }
   })
 }
 
@@ -47,7 +47,7 @@ async function deleteCar(id: number) {
   // await db.query(`DELETE FROM cars WHERE id = $1`, [id]);
 
   return prisma.cars.delete({
-    where: { id: id }
+    where: { id }
   })
 }
 
